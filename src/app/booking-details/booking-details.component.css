@@ -1,0 +1,122 @@
+/* tables */
+table { 
+  width: 95%; 
+  border-collapse: collapse; 
+  margin-right: 180px;
+  margin-top: 4%;
+  text-align:left;
+  margin-left: 2%;
+  float:left;
+  border-radius: 10px; 
+  box-shadow: 5px 5px #888888;
+  
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee;
+  block-size: 50px;
+
+}
+th {
+   
+  background-color:rgb(238, 186, 109);
+  color:rgb(75, 67, 67); 
+  font-weight: bold; 
+  border:2px;
+  
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align:center; 
+}
+
+  .btn{
+    margin-top: 2%;
+    margin-bottom: 30px;
+    margin-left: 700px;
+    border-color: gray;
+    color: blanchedalmond;
+      background-color:rgb(103, 104, 177);
+    font-size: 18px;
+}
+
+
+.btn:hover{
+  background-color: rgb(255, 153, 0);
+  color: black;
+} 
+
+.h3{
+  margin-top: 12%;
+}
+
+.heading2{
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ color: rgb(43, 39, 39);
+ margin-left: 5%;
+}
+.tripsummary{
+  width: 25%;
+  background-color:mintcream;
+  margin-top: 3%;
+  margin-right: 1%;
+  float:right;
+  height: 40%;
+  border: 1px solid #c2bcbc;
+
+}
+.bookingdetails{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.bdetails{
+  font-size: 24px;
+}
+.charges{
+  font-size: 16px;
+  margin-left: 2%;
+  float: left;
+
+}
+
+.amount{
+  font-size: 18px;
+  margin-right: 3%;
+  float:right
+}
+.paymentdetails{
+  display: block;
+}
+
+.flightdetails{
+float:center;
+width: 70%;
+margin: 4%;
+margin-left: 3%;
+}
+hr.line{
+    border: 1px solid rgb(255, 153, 0);
+}
+hr.line2{
+  border: 1px dotted rgb(255, 153, 0);
+}
+
+.main-booking
+{   
+  margin-bottom: 2%;
+  height:max-content;
+  padding: 20px;
+  background: white;
+  position:relative;
+  margin-top: 18%; 
+  margin-bottom: 10%; 
+  width: 75%;
+  border-radius: 7px;
+}
+.checkoutbutton
+{
+  text-align: right;
+  margin-right: 1%;
+}

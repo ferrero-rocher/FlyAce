@@ -1,0 +1,220 @@
+<div class="container-fluid" style="margin-top: 20%; margin-bottom: 10%; width: 75%;">
+    <div class="container-fluid custContainer" >
+        <h1 style="text-align: center;"><b >Who's Flying</b></h1>
+        <hr style="background-color: rgb(255, 153, 0);">
+        <!-- {{Passengers | json}} -->
+        <h4>{{from}} 
+            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  
+            {{to}}</h4>
+            <hr style="background-color: rgb(255, 153, 0);">
+        <!-- ngFor -->
+<div *ngFor="let seat of seatNos; index as i">
+  
+<!-- FORM -->
+<form   [formGroup]="PassengerForm" (ngSubmit)="onSubmit(seat,i)" novalidate>
+    <div class="PassForm">
+        <h4><b>Passenger {{i+1}}:</b></h4>
+        <div class="form-row justify-content-center" style="width: 100%;">
+            <div class="col-2">
+                <label for="SeatNo">Seat Number</label>
+                <input type="text" class="form-control" name="SeatNo" id="SeatNo" formControlName="seatNo" placeholder={{seat}}  value={{seat}}/>
+            </div>
+            <div class="col-2">
+                <label for="PassengerName">Name</label>
+                <input type="text" class="form-control" name="PassengerName" id="PassengerName" formControlName="passenger_name" />
+                <div class="errorEx" *ngIf="!passenger_name?.valid && (passenger_name?.dirty || passenger_name?.touched)">
+                    <div class="fn" [hidden]="!passenger_name.errors.required">
+                        *Required
+                    </div>
+                    <div class="fn" [hidden]="!passenger_name.errors.pattern">
+                        Only Characters allowed
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <label for="Contact">Contact Number</label>
+                <input type="text" name="Contact" class="form-control" id="Contact"  formControlName="Contact" />
+                    <div class="errorEx" *ngIf="!Contact?.valid && (Contact?.dirty || Contact?.touched)">
+                        <div  class="con" [hidden]="!Contact.errors.required">
+                            *Required
+                        </div>
+                        <div  class="con1" [hidden]="!Contact.errors.pattern">
+                            invalid Contact
+                        </div>
+                    </div>
+            </div>
+            <div class="col-3">
+                <label for="DOB">Date of Birth</label>
+                <input type="date" class="form-control" name="DOB" id="DOB" formControlName="DOB" placeholder="Enter DOB" />
+                    <div class="errorEx" *ngIf="!DOB?.valid && (DOB?.dirty || DOB?.touched)">
+                        <div  class="dob" [hidden]="!DOB.errors.required">
+                           *Required
+                        </div>
+                    </div>
+            </div>
+            <div class="col-2">
+                <label for="Gender">Gender</label>
+                <select class="form-control" placeholder="Adult" formControlName="Gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Others</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row justify-content-right" style="width: 100%; margin-top: 2%;">
+            <div class="col-2">
+
+            </div>
+            <div class="col-2">
+                <label for="Type">Type</label>
+                    <select class="form-control" placeholder="Adult" formControlName="Passenger_type">
+                        <option value="adult">Adult</option>
+                        <option value="child">Child</option>
+                        <option value="senior citizen">Senior Citizen</option>
+                    </select>
+            </div>
+            <div class="col-3">
+                <label for="DocType">Document Type</label>
+                    <select class="form-control" placeholder="AadharCard" formControlName="document_type">
+                        <option value="pan">Pan Card</option>
+                        <option value="pasport">Passport</option>
+                        <option value="aadhar">Aadhar Card</option>
+                    </select>
+            </div>
+            <div class="col-3">
+                <label for="DocNo">Document Number</label>
+                <input type="text" class="form-control" name="DocNo" id="DocNo" formControlName="document_no" />
+                 <!-- Validation -->
+                <div class="errorEx" *ngIf="!document_no?.valid && (document_no?.dirty || document_no?.touched)" >
+                    <div [hidden]="!document_no.errors.required">
+                    *Required
+                    </div>
+                    <div  class="con1" [hidden]="!document_no.errors.pattern">
+                        Invalid
+                    </div>
+                </div>
+            </div>
+           
+        <button type="submit" value="Add" class="btn btn-primary">ADD</button>
+        </div>
+        <!-- <button type="submit" name="submit" class="submitbutton"  style="width: 40%; float: right;">
+            Proceed <i class="fa fa-chevron-circle-right fa-lg" aria-hidden="true"></i> 
+        </button> -->
+    </div>
+</form>
+<!-- FORM -->
+</div>
+        <!-- ngFor -->
+
+    <!--------------------------------------------- RETURN ------------------------------------------------------>
+        <!-- ngFor -->
+        <div *ngIf="tripType==1">
+            <hr style="background-color: rgb(255, 153, 0);">
+            <h4>{{to}} 
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  
+                {{from}}</h4>
+                <hr style="background-color: rgb(255, 153, 0);">
+        <div  *ngFor="let seat of RseatNos; index as i" >
+           
+        <!-- FORM -->
+        <form   [formGroup]="PassengerForm" (ngSubmit)="RonSubmit(seat,i)" novalidate>
+            <div class="PassForm">
+                <h4><b>Passenger {{i+1}}:</b></h4>
+                <div class="form-row justify-content-center" style="width: 100%;">
+                    <div class="col-2">
+                        <label for="SeatNo">Seat Number</label>
+                        <input type="text" class="form-control" name="SeatNo" id="SeatNo" formControlName="seatNo" placeholder={{seat}}  value={{seat}}/>
+                    </div>
+                    <div class="col-2">
+                        <label for="PassengerName">Name</label>
+                        <input type="text" class="form-control" name="PassengerName" id="PassengerName" formControlName="passenger_name" />
+                        <div class="errorEx" *ngIf="!passenger_name?.valid && (passenger_name?.dirty || passenger_name?.touched)">
+                            <div class="fn" [hidden]="!passenger_name.errors.required">
+                                *Required
+                            </div>
+                            <div class="fn" [hidden]="!passenger_name.errors.pattern">
+                                Only Characters allowed
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <label for="Contact">Contact Number</label>
+                        <input type="text" name="Contact" class="form-control" id="Contact"  formControlName="Contact" />
+                            <div class="errorEx" *ngIf="!Contact?.valid && (Contact?.dirty || Contact?.touched)">
+                                <div  class="con" [hidden]="!Contact.errors.required">
+                                    *Required
+                                </div>
+                                <div  class="con1" [hidden]="!Contact.errors.pattern">
+                                    invalid Contact
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-3">
+                        <label for="DOB">Date of Birth</label>
+                        <input type="date" class="form-control" name="DOB" id="DOB" formControlName="DOB" placeholder="Enter DOB" />
+                            <div class="errorEx" *ngIf="!DOB?.valid && (DOB?.dirty || DOB?.touched)">
+                                <div  class="dob" [hidden]="!DOB.errors.required">
+                                   *Required
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-2">
+                        <label for="Gender">Gender</label>
+                        <select class="form-control" placeholder="Adult" formControlName="Gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Others</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row justify-content-right" style="width: 100%; margin-top: 2%;">
+                     <div class="col-2">
+        
+                    </div> 
+                    <div class="col-2">
+                        <label for="Type">Type</label>
+                            <select class="form-control" placeholder="Adult" formControlName="Passenger_type">
+                                <option value="adult">Adult</option>
+                                <option value="child">Child</option>
+                                <option value="senior citizen">Senior Citizen</option>
+                            </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="DocType">Document Type</label>
+                            <select class="form-control" placeholder="AadharCard" formControlName="document_type">
+                                <option value="pan">Pan Card</option>
+                                <option value="pasport">Passport</option>
+                                <option value="aadhar">Aadhar Card</option>
+                            </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="DocNo">Document Number</label>
+                        <input type="text" class="form-control" name="DocNo" id="DocNo" formControlName="document_no" />
+                         <!-- Validation -->
+                        <div class="errorEx" *ngIf="!document_no?.valid && (document_no?.dirty || document_no?.touched)" >
+                            <div [hidden]="!document_no.errors.required">
+                            *Required
+                            </div>
+                            <div  class="con1" [hidden]="!document_no.errors.pattern">
+                                Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" value="Add" class="btn btn-primary">ADD</button>
+
+                   
+                </div>
+                <!-- <button type="submit" name="submit" class="submitbutton"  style="width: 40%; float: right;">
+                    Proceed <i class="fa fa-chevron-circle-right fa-lg" aria-hidden="true"></i> 
+                </button> -->
+            </div>
+        </form>
+        <!-- FORM -->
+        </div>
+    </div>
+                <!-- ngFor
+                <button type="submit" name="submit" class="submitbutton"  style="width: 40%; float: right;">
+                    Proceed <i class="fa fa-chevron-circle-right fa-lg" aria-hidden="true"></i> 
+                </button> -->
+    </div>
+</div>

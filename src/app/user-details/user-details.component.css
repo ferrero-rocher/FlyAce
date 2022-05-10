@@ -1,0 +1,56 @@
+
+.emp-profile{
+    
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.profile-img img{
+    width: 70%;
+    height: 100%;
+ 
+}
+
+
+.profile-edit-btn{
+    border-color:rgb(66, 33, 77);
+    
+    /* border-color: gray; */
+    color: whitesmoke;
+    background-color:rgb(103, 104, 177);
+    border-radius: 1.5rem;
+    width: 90%;
+    padding: 2%;
+    font-weight: 500;
+    cursor: pointer;
+}
+.profile-edit-btn:hover
+{
+    background-color: rgb(255, 153, 0);
+    color: black;
+    border-radius: 1rem;
+    border-color:rgb(130, 127, 131);
+}
+
+
+
+
+.profile-head {
+    font-size: larger;
+    padding: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 4, 29);
+    font-weight: 400%;
+    
+}
+
+.labels{
+    font-weight: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+  

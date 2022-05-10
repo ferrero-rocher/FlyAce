@@ -1,0 +1,68 @@
+<form class="form"  [formGroup]="RegisterForm" (ngSubmit)="onSubmit()"  novalidate>
+    <br><h1 class="title" style="margin-top: 0.5%;">Registration</h1>
+        <input for="FirstName" class="inputs" type="text" name="FirstName" id="FirstName" formControlName="FirstName" placeholder="Enter First Name">
+        <div class="errorEx" *ngIf="!FirstName?.valid && (FirstName?.dirty || FirstName?.touched)">
+            <div [hidden]="!FirstName.errors.required">
+                *First name is required
+            </div>
+            <div [hidden]="!FirstName.errors.pattern">
+              *Invalid entry
+            </div>
+        </div>
+
+        <input for="LastName" class="inputs" type="text" name="LastName" id="LastName" formControlName="LastName" placeholder="Enter Last Name">
+        <div class="errorEx" *ngIf="!LastName?.valid && (LastName?.dirty || LastName?.touched)">
+            <div  [hidden]="!LastName.errors.required">
+                *last name is required
+            </div>
+            <div  [hidden]="!LastName.errors.pattern">
+              *Invalid entry
+            </div>
+        </div>
+
+        <input for="email" class="inputs" type="email" id="email" name="email" formControlName="email" placeholder="Enter email">
+        <div class="errorEx" *ngIf="!email.valid && (email.dirty ||email.touched)">
+            <div  class="errorEx" [hidden]="!email.errors.required">
+                *email is required
+            </div>
+            <div  class="errorEx" [hidden]="!email.errors.email">
+                invalid email id
+            </div>
+             </div>
+            
+        <input for="password" class="inputs" type="password" name="password" id="password" formControlName="password"
+            placeholder="Enter password">
+          <div class="errorEx" *ngIf="!password.valid && (password.dirty ||password.touched)" class="errorEx">
+            <div [hidden]="!password.errors.pattern">
+              Password should contain atleast 8 characters, Lower Case, Uppercase, Numbers and Special characters($@!%*?&)
+            </div>
+            <div class="errorEx" [hidden]="!password.errors.maxLength">
+              Max length allowed is {{password.errors.maxlength?.requiredLength}} 
+            </div>
+            <div class="errorEx" [hidden]="!password.errors.required">
+              Password is required
+            </div>
+          </div>
+
+        <input for="Phoneno" class="inputs" type="tel" name="Phoneno" id="phone_number"  formControlName="Phoneno" placeholder="Enter Phoneno Number">
+        <div class="validcheck" *ngIf="!Phoneno?.valid && (Phoneno?.dirty || Phoneno?.touched)">
+            <div  class="errorEx" [hidden]="!Phoneno.errors.required">
+              Phone Number is required
+           </div>
+           <div  class="errorEx" [hidden]="!Phoneno.errors.pattern">
+            invalid Phone Number
+        </div>
+        </div>
+
+        <input for="DOB" class="inputs" type="date" name="DOB" id="DOB" formControlName="DOB" placeholder="Enter DOB">
+        <div class="validcheck" *ngIf="!DOB?.valid && (DOB?.dirty || DOB?.touched)">
+            <div  class="errorEx" [hidden]="!DOB.errors.required">
+               DOB is required
+            </div>
+        </div><br>
+      
+    <button type="submit" name="submit" class="submitbutton"> Register <i class="fa fa-chevron-circle-right fa-lg" aria-hidden="true"></i> 
+    </button>
+    <p class="link">Already have an account? <a routerLink="../">Login here</a></p>
+
+</form>

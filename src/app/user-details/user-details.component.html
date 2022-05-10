@@ -1,0 +1,55 @@
+<div class="container emp-profile" style="background-color: whitesmoke; margin-top: 19%; margin-bottom: 10%;">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="../../assets/prof.png" alt=""/><br>
+                    <!-- <i class="fa fa-user-circle-o fa-5x pull-right" aria-hidden="true" style="color: rgb(68, 69, 124);"></i>  -->
+                </div>
+            </div>
+           <div class="profile-head">
+                    
+                <div class="row">
+                    <div class="col-md-8">
+                        <label class="labels">Name :</label>
+                    </div>
+                
+                    <div class="col-md-4">
+                        <p>{{profile.FirstName}} {{profile.LastName}}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <label class="labels">Email :</label>
+                    </div>
+                    <div class="col-md-4">
+                        <p>{{profile.email}}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <label class="labels">Phone :</label>
+                    </div>
+                    <div class="col-md-4">
+                        <p>{{profile.Phoneno}}</p>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="labels">Date of Birth :</label>
+                        </div>
+                        <div class="col-md-4">
+                            <p>{{profile.DOB | date:'shortDate'}}</p>
+                        </div>
+                    </div>
+        </div>
+        
+    </div>
+    <hr style="background-color: rgb(255, 153, 0);">
+
+    </form>
+</div>
+                        

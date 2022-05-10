@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+
+<div>
+<router-outlet></router-outlet>
+</div>
+<footer>
+    <div class="row align-items-center" style="margin:0%; padding-top: 2%;" >
+        <div class="col">
+            <a class="p-2" routerLink="">Home</a>
+            <a class="p-2" routerLink="About">About Us</a>
+            <a class="p-2" routerLink="Contact">Contact Us</a>
+        </div>
+        <div class="col" style="font-size: 20px;">
+            <a ><i class="fa fa-facebook p-3" aria-hidden="true"></i></a>
+            <a><i class="fa fa-instagram p-3" aria-hidden="true"></i></a>
+            <a><i class="fa fa-pinterest p-3" aria-hidden="true"></i></a>
+            <a><i class="fa fa-twitter p-3" aria-hidden="true"></i></a>
+            <a><i class="fa fa-linkedin w3-hover-opacity p-3" aria-hidden="true"></i></a>
+        </div>
+        <div class="col">
+            <a [routerLink]="['/adminlogin']" *ngIf="!loggedin()">Admin Login</a>
+        </div>
+    </div>
+    <div class="row align-items-end" style="margin:0%; padding: 1%;">
+        <div class="col">
+            <p>
+                &#169; FlyAce Ltd. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>

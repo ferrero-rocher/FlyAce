@@ -1,0 +1,89 @@
+.custContainer{
+    margin-top: 2%; 
+    margin-bottom: 2%;
+    height:max-content;
+    padding: 20px;
+    background: white;
+    position:relative;
+  text-align:center;
+}
+.col-4 a
+{
+    padding: 4%;
+    margin: 20%;
+    background-color: whitesmoke;
+    text-decoration: none;
+    border: 1px solid rgb(68, 69, 124);
+    border-radius: 7px;
+    height: 20%;
+    width: 20%;
+}
+.col-4 a:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgb(68, 69, 124);
+    color: whitesmoke;
+}
+.col-4 a.selected {
+    background: rgb(255, 153, 0);
+    color: black;
+}
+.col-4 a.disabled {
+    background: #eaeaea;
+    color: #aaa;
+    box-shadow: 0;
+    cursor: default;
+    border: 0;
+}
+.row
+{
+    margin: 4%;
+}
+/* .col-2
+{
+    border: 2px gray;
+    border-radius: 4px;
+    background-color: lightgray;
+    color: gray;
+} */
+/*try*/
+.seat a
+{
+    padding: 8%;
+    margin: 20%;
+    background-color: whitesmoke;
+    text-decoration: none;
+    border: 1px solid rgb(68, 69, 124);
+    border-radius: 7px;
+}
+.seat a:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgb(68, 69, 124);
+    color: whitesmoke;
+}
+.seat a.selected {
+    background: rgb(255, 153, 0);
+    color: black;
+}
+.seat a.disabled {
+    background: #eaeaea;
+    color: #aaa;
+    box-shadow: 0;
+    cursor: not-allowed;
+    border: 0;
+}
+.path
+{
+    margin-left: 20%;   
+    border: 2px gray;
+    border-radius: 4px;
+    color: gray;
+}
+div.allSeats
+{
+    overflow: auto;
+    height: 500px;
+}

@@ -1,0 +1,39 @@
+<div class="container-fluid custContainer" >
+    <div class="container">
+        <h2>Your Ticket</h2>
+        <hr style="background-color: rgb(255, 153, 0);">
+        
+    <!--ngFor-->
+        <div class="tab" >
+            <div class="row"> 
+                <div class="col-2" style="text-align: center;">
+                    <h5 class="timeLoc">Flight Number</h5>
+                    A1005
+                </div>
+            <div class="col-2" style="text-align: center;">
+                <h5 class="timeLoc">02:50 BOM</h5>
+                Mumbai
+            </div>
+            <div class="col-2" style="text-align: center;">
+                <h5 class="timeLoc">Date</h5>
+                28/10/2014
+            </div>
+            <div class="col-2" style="text-align: center;">
+                <h5 class="timeLoc">05:20 DEL</h5>
+                 Delhi
+            </div>
+            <div class="col-2">
+                Total Amount
+                <h5>5000 INR</h5> 
+            </div>
+            <div class="col-2">
+                <h5>2</h5>
+                <span style="font-size: 12px;">Number of Passengers</span>
+            </div>
+            <div class="col">
+               <button class="bookbutton" [routerLink]="['/viewTicket']">View Details</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

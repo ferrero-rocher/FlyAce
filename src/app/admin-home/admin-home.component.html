@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="sidebar">
+        <h3 ><i class="fa fa-home" aria-hidden="true"></i> ADMIN</h3>
+        <hr>
+        <br>
+        <ul>
+            <li><a routerLink="viewschedule">
+                <i class="fa fa-list-ul fa-lg fa-fw" aria-hidden="true"></i> 
+                View Schedule</a></li> <br>
+            <li><a routerLink="addflight">
+                <i class="fa fa-plus-circle fa-lg fa-fw" aria-hidden="true"></i> 
+                Add Flights</a></li><br>
+            <li><a (click)="LogoutAdmin()">
+                <i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i> 
+                Logout</a></li> 
+        </ul> 
+    </div>
+
+    <div class="main_content"> 
+        <p class="h1 text-center mt-3"><img src="../../assets/logowhite.png" style="width: 15%;"/></p>  
+       <router-outlet></router-outlet>  
+    </div>
+</div>

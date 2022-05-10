@@ -1,0 +1,71 @@
+<div class="container p-4 mt-2 mb-5" style="margin-top: 13%; margin-bottom: 7%;">
+    <table class="table  table-bordered  mt-5 text-center" style="background-color:beige; " >
+      <thead style="background-color: rgb(68, 69, 124);color: white;">
+        <tr>
+          <th scope="col">Sr No.</th>
+          <th scope="col">Schedule ID</th>
+          <th scope="col">Plane Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Source</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Seats Booked</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let schedule of schedules; index as i">
+            <td>{{i+1}}</td>
+          <th scope="row">{{schedule.Schedule_Id}}</th>
+          <td>{{schedule.Plane_Name}}</td>
+          <td>{{schedule.Travel_Date}}</td>
+          <td>{{schedule.Source}}</td>
+          <td>{{schedule.Destination}}</td>
+          <td>{{schedule.Seats_Booked}}</td>
+
+          <td><button class="btn btn-danger btn-sm " data-toggle="modal" data-target="#exampleModal" (click)="confirmDeleteSchedule(schedule)">Delete</button></td>         
+        </tr>
+      </tbody>
+    </table> 
+   <br><br>
+  
+   <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="modal===true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirm Deletion of Flight</h5>
+          <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <table class="table  table-bordered  mt-5 " style="background-color:beige; " >
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Schedule ID</th>
+                    <th scope="col">Plane Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Seats Booked</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{schedule.Schedule_Id}}</th>
+                    <td>{{schedule.Plane_Name}}</td>
+                    <td>{{schedule.Travel_Date}}</td>
+                    <td>{{schedule.Day}}</td>
+                    <td>{{schedule.Source}}</td>
+                    <td>{{schedule.Destination}}</td>
+                    <td>{{schedule.Seats_Booked}}</td>        
+              </tr>     
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center mb-2">
+          <button type="button" class="btn btn-danger btn Close"  data-bs-dismiss="modal" (click)="deleteSchedule(schedule.Schedule_Id)"  data-dismiss="modal">Confirm Delete</button>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>

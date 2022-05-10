@@ -1,0 +1,24 @@
+.custContainer{
+    margin-top: 2%; 
+    margin-bottom: 2%;
+    height:max-content;
+    padding: 20px;
+    background: white;
+    position:relative;
+}
+.PassForm{
+  width: 100%;
+  margin: 2% auto;
+  padding: 2%;
+  background: white;
+  position:relative;
+  border-radius: 5%;
+box-shadow: 2px 5px 10px 2px;
+}
+
+.errorEx
+{
+  background-color: transparent; border-color: transparent;
+  padding: 3%;
+  color: red;
+}

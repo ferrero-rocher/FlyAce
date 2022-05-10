@@ -1,0 +1,8 @@
+.col a:hover
+{
+    color: rgb(255, 153, 0);
+}
+.col a
+{
+    color: white;
+}

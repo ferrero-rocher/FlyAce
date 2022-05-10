@@ -1,0 +1,91 @@
+<div class="container text-center">
+    <form style="background-color:rgb(68, 69, 124);" class="form border border-light p-5 mt-5  mb-3" [formGroup]="addflightsForm" (ngSubmit)="onSubmit()" novalidate>
+      
+          <p class="h1 mb-4 text-white">Add Flights</p> 
+  
+          <div class="form-row mb-2"> 
+            <div class="col">
+              <p class="h5 text-left text-white ">Plane Name:</p>
+              <select id="planename"  class="form-control " placeholder="Enter Plane Name" n formControlName="plane_name" >
+                <option value="Titanic">Titanic</option>
+                <option value="Rocky">Rocky</option>
+                <option value="Astroworld">Astroworld</option>
+                <option value="HeliCarrier">HeliCarrier</option>
+                <option value="Q-Ship">Q-Ship</option>
+                <option value="Jericho">Jericho</option>
+                <option value="Asgard">Asgard</option>
+              </select>
+            </div> 
+          </div> 
+          
+          <div class="form-row mb-2"> 
+            <div class="col">
+              <p class="h5 text-left text-white ">From:</p>
+              <select id="source" class="dropdown-header" name="source" formControlName="source">
+                <option value="Mumbai" class="dropdown-item">Mumbai</option>
+                <option value="Delhi" class="dropdown-item">Delhi</option>
+                <option value="Hyderabad" class="dropdown-item">Hyderabad</option>
+                <option value="Chennai" class="dropdown-item">Chennai</option>
+                <option value="Jaipur" class="dropdown-item">Jaipur</option>
+            </select>
+            </div> 
+            
+            <div class="col">
+              <p class="h5 text-left text-white ">To:</p>
+              <select id="source" class="dropdown-header" name="source" formControlName="destination">
+                <option value="Mumbai" class="dropdown-item">Mumbai</option>
+                <option value="Delhi" class="dropdown-item">Delhi</option>
+                <option value="Hyderabad" class="dropdown-item">Hyderabad</option>
+                <option value="Chennai" class="dropdown-item">Chennai</option>
+                <option value="Jaipur" class="dropdown-item">Jaipur</option>
+            </select>
+            </div> 
+          </div> 
+  
+          <div class="form-row mb-2"> 
+            <div class="col">           
+              <p class="h5 text-left text-white ">Departure Time:</p>
+              <input type="text" id="dtime" class="form-control" placeholder="Enter Departure Time" name="dtime" formControlName="dept_time">
+            </div> 
+            
+            <div class="col">
+              <p class="h5 text-left text-white ">Arrival Time:</p>
+              <input type="text" id="atime" class="form-control" placeholder="Enter Arrival Time" name="atime" formControlName="arr_time" >
+            </div> 
+          </div> 
+  
+          <div class="form-row mb-2"> 
+            <div class="col">
+              <p class="h5 text-left text-white ">Price For Business class:</p>
+              <input type="text" id="bprice" class="form-control" placeholder="Enter Amount for Business Class" name="bprice" formControlName="price_B">
+            </div> 
+            
+            <div class="col">
+              <p class="h5 text-left text-white ">Price For Economy class:</p>
+              <input type="text" id="eprice" class="form-control" placeholder="Enter Amount for Economy Class" name="eprice" formControlName="price_E">
+            </div> 
+          </div> 
+  
+          <div class="row mb-2 mt-4  text-left"> 
+            <div class="col">
+              <p class="h5 text-left text-white ">Day:</p>
+              <select id="days" class="form-control" formControlName="day">
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+             </select>
+            </div> 
+            <div class="col">
+              <p class="h5 text-left text-white ">Number of Weeks:</p>
+              <input type="number" class="form-control" formControlName="no_weeks" min="1"/>
+            </div>
+        </div> 
+        
+          <button  class="my-4 btn-secondary btn-success btn-lg " type="submit">Submit</button>
+    </form> 
+    <!-- {{addflightsForm.valid}}{{addflightsForm.value | json}} -->
+  </div>

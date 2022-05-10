@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: mintcream;
+  /* font-family: cursive , Cambria, Cochin, Georgia, Times, 'Times New Roman', serif */
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+footer {
+   display: block;
+    width: 100%;
+    height: max-content;
+    background-color:rgb(68, 69, 124);
+    color: white;
+    text-align: center;
+  }
+
+  /* --------------------
+  Login and Registration
+  --------------------
+   */
+.form{
+    height: auto;
+    width: 70%;
+    margin:-5%  auto;
+    padding: 10px 30px;
+    background: white;
+    position:relative;
+  text-align:center;
+  -webkit-border-radius:20px 20px 20px 20px;
+     -moz-border-radius:20px 20px 20px 20px;
+          border-radius:20px 20px 20px 20px;
+  -webkit-box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;
+     -moz-box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;
+          box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;
+  box-shadow: 5px 5px 20px 5px;
+}
+.submitbutton {
+  color: #fff;
+  background: rgb(103, 104, 177);
+  border: 0;
+  outline: 0;
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 7%;
+  cursor: pointer;
+  box-shadow:0px 3px 4px rgb(49, 32, 83);
+  border-radius: 22px;
+  box-sizing: border-box;
+}
+.submitbutton:hover
+{
+  color: black;
+  background-color: rgb(255, 153, 0);
+}
+h1.title {
+  color: #666;
+  margin: 30px 0px ;
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+}
+.inputs {
+  font-size: 20px;
+  border: 1.5px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  height: 25px;
+  width: calc(100% - 50px);
+}
+.inputs:focus {
+  border-color:#6e8095;
+}
+
+.link {
+  color: #666;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 7%;
+}
+.link a {
+  color: #666;
+}
+h3 {
+  font-weight: normal;
+  text-align: center;
+}
+    
+    
+    
+

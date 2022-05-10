@@ -1,0 +1,92 @@
+<!-- <div class="container1  mb-3">
+
+    <img src="../../assets/con1.jpg" class="rounded" alt="Cinque Terre" style="height: 250px;
+    width: 1550px;"> 
+      <div class="bottom-left "><h1><b>Contact Us</b></h1></div>
+    
+    </div>
+     -->
+<div class="container mb-4" style="margin-top: 23%;">
+    <p class="h1" style="color: rgb(255, 153, 0);"> <b>Contact</b> <span class="text-light"><b> Information</b></span></p> 
+        <div class="row" style="margin-top: 2%;"> 
+            <div class="col">
+                <p>Contact us and we'll get back to you within 24 hours.</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 30 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" /> 
+                </svg> 
+                <p> Chicago, US</p> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg>
+                <p>+00 1515151515</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-open-fill" viewBox="0 0 16 16">
+                    <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z"/>
+                </svg>
+                <p>myemail@something.com</p>
+            </div> 
+            <form [formGroup]="queryForm" (ngSubmit)="onSubmit()" novalidate>
+              <div class="col"> 
+                  <p class="h4"> Your Request</p>
+                      <div class="form-row mb-2"> 
+                          <div class="col">
+                              <!-- First name --> 
+                              <input type="text" id="name" class="form-control " placeholder="Name"  name="name" formControlName="name" >
+                          </div> 
+                          <div class="col">
+                              <!-- Last name -->
+                              <input type="text" id="email" class="form-control " placeholder="Email"  name="email" formControlName="email" >
+                          </div>  
+                      </div> 
+                
+                <div class="form-row mb-2"> 
+          
+                  <div class="col">
+                    <!-- First name --> 
+                    <input type="text" id="phone" class="form-control " placeholder="Phone"  name="phone" formControlName="phone" >
+                  </div> 
+                  
+                  <div class="col">
+                    <!-- Last name -->
+            
+                    <input type="text" id="location" class="form-control " placeholder="Skype"  name="location" formControlName="location" >
+                  </div> 
+                  
+                </div> 
+                
+                  <div class="form-group">
+                    <textarea class="form-control" id="querry" placeholder="Type in here " name="querry" formControlName="querry"rows="5" placeholder="Type in here "></textarea>
+                    </div>                 
+                <button  class="my-4 btn-secondary btn-success btn-lg " type="submit">Submit Response</button>
+                
+      
+      
+              </div>
+            </form>
+        
+        </div>
+        <div class="container-fluid text-center bg-grey">
+            <h2>TECH-TEAM</h2>
+            <h4>Reach out to us</h4>
+            <div class="row text-center">
+              <div class="col-sm-4">
+                <div class="thumbnail">
+                  <img src="../../assets/per1.jpg" alt="Paris">
+                  <p><strong>Amar</strong></p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="thumbnail">
+                  <img src="../../assets/per1.jpg" alt="New York">
+                  <p><strong>Akbar</strong></p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="thumbnail">
+                  <img src="../../assets/per1.jpg" alt="San Francisco">
+                  <p><strong>Anthony</strong></p>
+                </div>
+              </div>
+              
+          </div>
+    </div> 
+</div>

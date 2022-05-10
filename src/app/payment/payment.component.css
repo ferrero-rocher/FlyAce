@@ -1,0 +1,129 @@
+/* payment */
+.creditCardForm {
+    max-width: 750px;
+    background-color:rgba(248, 247, 245, 0.979);
+    box-shadow:1px 1px 1px 1px rgb(168, 163, 172);
+
+    overflow: hidden;
+    margin: 80px auto;
+    padding: 20px;
+    color: #4c4e56;
+}
+.creditCardForm label {
+    width: 50%;
+    margin-bottom: 1px;
+}
+.creditCardForm .heading h1 {
+    text-align: left;
+    font-size: 30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #4c4e56;
+
+}
+
+hr.line{
+    background-color:  rgb(255, 153, 0);
+}
+
+.creditCardForm .payment {
+    float: left;
+    font-size: 18px;
+    padding: 10px 25px;
+    margin-top:10px;
+    position: relative;
+}
+
+
+.creditCardForm .payment .form-group {
+    float: left;
+    margin-bottom: 15px;
+}
+.creditCardForm .payment .form-control {
+    line-height: 30px;
+    height: auto;
+    padding: 0 16px;
+}
+
+.creditCardForm .payment-method{
+    font-size:medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+option { 
+   
+    /* Whatever color  you want */
+}
+
+.creditCardForm .owner {
+    width: 60%;
+    margin-right: 10px;
+}
+.creditCardForm .CVV {
+    width: 35%;
+}
+.creditCardForm #card-number-field {
+    width: 100%;
+}
+.creditCardForm #expiration-date {
+    width: 40%;
+}
+
+.creditCardForm #pay-now {
+    width: 100%;
+    border-radius:1px 1px 1px 1px;
+    margin-top: 25px;
+}
+.creditCardForm .payment .btn {
+    width: 100%;
+    margin-top: 3px;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:rgb(103, 104, 177);
+    color: white;
+}
+
+.creditCardForm .payment .btn:hover {
+    background-color:rgb(255, 153, 0);
+    color: black;
+  }
+.creditCardForm .payment select {
+    
+    padding: 10px;
+    margin-right: 15px;
+}
+.transparent {
+    opacity: 0.2;
+}
+@media(max-width: 650px) {
+    .creditCardForm .owner,
+    .creditCardForm .CVV,
+    .creditCardForm #expiration-date,
+    .creditCardForm #credit_cards {
+        width: 10%;
+    }
+    .creditCardForm #credit_cards {
+        text-align: left;
+    }
+}
+
+#cvv {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.541)), url("https://img.icons8.com/material-outlined/24/000000/help.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center
+}
+
+#cvv:hover {}
+
+.main-payment
+{
+    margin-top: 10%; 
+}
+
+.errorEx
+{
+  background-color: transparent; border-color: transparent;
+  padding: 3%;
+  color: red;
+  font-size: small;
+}

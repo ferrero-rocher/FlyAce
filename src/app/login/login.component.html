@@ -1,0 +1,7 @@
+<form class="form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+    <h1 class="title" style="margin-bottom: 20%;">User Login</h1>
+    <input type="text" class="inputs"  placeholder="Email" autofocus="true" id="email" name="email" formControlName="email"/>
+    <input type="password" class="inputs" name="password" placeholder="Password" id="password" name="password" formControlName="password"/>
+    <input type="submit" value="Login" name="submit" class="submitbutton"/>
+    <p class="link">Don't have an account? <a routerLink="Register"> Registration Now </a><i class="fa fa-plane"></i></p>
+</form>

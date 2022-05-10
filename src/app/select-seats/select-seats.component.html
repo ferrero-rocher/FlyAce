@@ -1,0 +1,72 @@
+<div class="container-fluid" style="margin-top: 20%; margin-bottom: 10%; width: 75%;">
+    <div class="container-fluid custContainer" style="border-radius: 7px;">
+        <h2 class="heading font-weight-bold" >
+            <i class="fa fa-plane" aria-hidden="true"></i>
+            Select Seats
+        </h2>
+        <hr style="background-color: rgb(255, 153, 0);">
+        <h4>{{from}} 
+            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  
+            {{to}}</h4>
+            <hr style="background-color: rgb(255, 153, 0);">
+    <div class="allSeats">
+        
+        <div *ngFor="let row of rowSeats; index as iRow;">
+            <div class="row justify-content-center" *ngIf="iRow===0">
+                Business
+            </div>
+            <div class="row justify-content-center" *ngIf="iRow===2">
+                Economy
+            </div>
+            <div class="row justify-content-center" >
+                <div class="col-2 seat" *ngFor="let seat of row; index as i">
+                    <a (click)="pickSeat(seat)" [ngClass]="{'selected':seat.check===true, 'disabled':seat.isAvailable===false}" [disabled]="seat.isAvailable===true">{{seat.row}}{{seat.letter}}</a>
+                    <span class="path">
+                    <i class="fa fa-arrows-v" aria-hidden="true" *ngIf="seat.letter==='B'"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="background-color: rgb(255, 153, 0);">
+    <!-- RETURN FLIGHT -->
+    <div *ngIf="tripType==1">
+    <h4 *ngIf="tripType==1">{{to}} 
+        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  
+        {{from}}</h4>
+        <hr style="background-color: rgb(255, 153, 0);">
+    <div class="allSeats">
+        <div *ngFor="let row of RrowSeats; index as iRow;">
+            <div class="row justify-content-center" *ngIf="iRow===0">
+                Business
+            </div>
+            <div class="row justify-content-center" *ngIf="iRow===2">
+                Economy
+            </div>
+            <div class="row justify-content-center" >
+                <div class="col-2 seat" *ngFor="let seat of row; index as i">
+                    <a (click)="RpickSeat(seat)" [ngClass]="{'selected':seat.check===true, 'disabled':seat.isAvailable===false}" [disabled]="seat.isAvailable===true">{{seat.row}}{{seat.letter}}</a>
+                    <span class="path">
+                    <i class="fa fa-arrows-v" aria-hidden="true" *ngIf="seat.letter==='B'"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="background-color: rgb(255, 153, 0);">
+    </div>
+    <!-- RETURN FLIGHT -->
+        <button type="submit" name="submit" class="submitbutton" style="margin-top: 2%; margin-bottom: 1%; width: 40%;" (click)="proceedToSeats()">
+            Proceed <i class="fa fa-chevron-circle-right fa-lg" aria-hidden="true"></i> 
+        </button>
+    </div>
+    <!-- {{selectedSeats | json}} <br>  -->
+    <!-- {{selectedSeatsClass | json}} <br> -->
+     <!-- {{RselectedSeats | json}} <br> -->
+     <!-- {{RselectedSeatsClass | json}} -->
+    <!-- <br> selected {{pickedSeats}}
+    <br> Rselected {{RpickedSeats}} <br>
+    <br> Max {{maxSeats}}<br>
+    <br> RMax {{RmaxSeats}}<br>
+    {{rowSeats | json}} -->
+</div>

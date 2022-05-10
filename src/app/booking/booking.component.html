@@ -1,0 +1,148 @@
+<div class="container-fluid" style="margin: 25% auto;">
+    <form [formGroup]="bookingForm" class="form"  (ngSubmit)="onSubmit()" novalidate >
+        <h2 class="heading font-weight-bold" >
+            <i class="fa fa-plane" aria-hidden="true"></i>
+            Book Flight</h2>
+        <hr style="background-color: rgb(255, 153, 0);">
+        <table class="table table-borderless">
+        <tr>
+            <th>
+                <label class="form-check-label" for="from" >From</label>
+            </th>
+            <th>
+                <label class="form-check-label" for="to">To</label>
+            </th>
+            <th>
+                <label class="form-check-label" for="dapartDate">Departure Date</label>
+            </th>
+            <th>
+                <label class="form-check-label" for="returnDate">Return Date</label>
+            </th>
+            <th>
+                <label class="form-label" for="passengers">Passengers</label>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <select id="from" class="dropdown-header" formControlName="from">
+                    <option value="Mumbai" class="dropdown-item">Mumbai</option>
+                    <option value="Delhi" class="dropdown-item">Delhi</option>
+                    <option value="Hyderabad" class="dropdown-item">Hyderabad</option>
+                    <option value="Chennai" class="dropdown-item">Chennai</option>
+                    <option value="Jaipur" class="dropdown-item">Jaipur</option>
+                </select>
+                <!-- Validation -->
+                <div class="errorEx" *ngIf="!from?.valid && (from?.dirty || from?.touched)" >
+                    <div [hidden]="!from.errors.required">
+                       *Required
+                    </div>
+                </div>
+            </td>
+            <td>
+                <select id="to" class="dropdown-header"  formControlName="to">
+                    <option value="Mumbai" class="dropdown-item">Mumbai</option>
+                    <option value="Delhi" class="dropdown-item">Delhi</option>
+                    <option value="Hyderabad" class="dropdown-item">Hyderabad</option>
+                    <option value="Chennai" class="dropdown-item">Chennai</option>
+                    <option value="Jaipur" class="dropdown-item">Jaipur</option>
+                </select>
+                <!-- Validation -->
+                <div class="errorEx" *ngIf="!to?.valid && (to?.dirty || to?.touched)" >
+                    <div [hidden]="!to.errors.required">
+                       *Required
+                    </div>
+                </div>
+            </td>
+            <td>
+                <input type="date" class="form-control"  id="dapartDate" name="dapartDate" formControlName="departDate"/>
+                <!-- Validation -->
+                <div class="errorEx" *ngIf="!departDate?.valid && (departDate?.dirty || departDate?.touched)" >
+                    <div [hidden]="!departDate.errors.required">
+                       *Required
+                    </div>
+                </div>
+            </td>
+            <td>
+                <input type="date" class="form-control" id="returnDate" name="returnDate"  formControlName="returnDate"/>
+                <!-- Validation -->
+                <div class="errorEx" *ngIf="!returnDate?.valid && (returnDate?.dirty || returnDate?.touched) && !returnDate.disabled" >
+                    <div [hidden]="!returnDate.errors.required">
+                       *Required
+                    </div>
+                </div>
+            </td>
+            <td>
+                <input type="number" class="form-control"  id="passengers" name="passengers" formControlName="passengers" min="1"/>
+                <!-- Validation -->
+                <div class="errorEx" *ngIf="!passengers?.valid && (passengers?.dirty || passengers?.touched)" >
+                    <div [hidden]="!passengers.errors.required">
+                       *Required
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="font-size: 18px;">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="tripType" id="oneWay" value="0" formControlName="tripType" (click)="returnDateDisEnable()" checked />
+                    <label class="form-check-label" for="oneWay" aria-checked="true">One Way | </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="tripType" id="twoWay" value="1" formControlName="tripType" (click)="returnDateEnable()">
+                    <label class="form-check-label" for="twoWay">Two Way</label>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button type="submit" name="submit" class="submitbutton" style="margin-top: 1%; margin-bottom: 1%; width: 40%;"> <!--[routerLink]="['/Search']"-->
+        <i class="fa fa-search" aria-hidden="true"></i> Search
+    </button>
+    </form>    
+</div>
+
+<!--EXTRA-->
+<div class="container" style="margin-top: -20%;">
+    <div class="container-fluid text-center bg-grey">
+        <h2>We Travel</h2>
+        <h5>Everywhere...</h5>
+        <div class="row text-center" >
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="../../assets/kolkata.jpg" alt="kolkata" width="100%">
+              <p><strong>Kolkata</strong></p>
+              <p>Deal Starts at : 2,000/--</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="../../assets/tajmahal.jpg" alt="Agra" width="100%">
+              <p><strong>Agra York</strong></p>
+              <p>Deal Starts at : 3,000/--</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="../../assets/chennai.jpg" alt="Chennai" width="100%">
+              <p><strong>Chennai</strong></p>
+              <p>Deal Starts at : 3,500/--</p>
+            </div>
+          </div>
+      </div>
+</div>
+</div>
+<!-- NEWS LETTER -->
+<div class="container news">
+    <div class="newsLetter" >
+        <div class="">
+          <h2>Get the best offers first!</h2>
+          <p>Join our newsletter.</p>
+          <label>E-mail</label>
+          <div class="input-group col-6" style="padding-left: 0%;">
+          <form  [formGroup]="emailForm" (ngSubmit)="EmailSubmit()" novalidate>
+          <input class="text" type="text" placeholder="Your Email address" id="email" name="email" formControlName="email">
+          <button type="submit" class="btn btn-danger">Subscribe</button>
+        </form>
+        </div>
+        </div>
+      </div>
+    </div>

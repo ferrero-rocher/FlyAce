@@ -1,0 +1,199 @@
+<div class="container-fluid" style="margin-top: 20%; margin-bottom: 10%; width: 75%;">
+    <div class="container-fluid custContainer" >
+        <ul class="nav nav-tabs" >
+            <li class="nav-item">
+              <a class="nav-link " [ngClass]="{active: trip}" (click)="changeTrip(true)">
+                  <h4>{{from}} 
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  
+                    {{to}}</h4>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" *ngIf="tripType==1" [ngClass]="{active: !trip}" (click)="changeTrip(false)">
+                <h4>{{to}} 
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  
+                    {{from}}</h4>
+              </a>
+            </li>
+        </ul>
+        <div class="container" class="container" *ngIf="trip==true">
+            <!--ngFor-->
+                <div class="tab" *ngFor="let flight of flights;">
+                    <div class="row">
+                    <div class="col-2" style="text-align: left;">
+                        <h5 class="timeLoc">{{flight.Arrival_Time}}</h5>
+                        {{flight.Source}}
+                    </div>
+                    <div class="col-mb-auto duration">
+                        <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+                        <br>
+                        {{flight.Duration}} Hrs
+                    </div>
+                    <div class="col-2" style="text-align: right;">
+                        <h5 class="timeLoc">{{flight.Departure_Time}}</h5>
+                        {{flight.Destination}}
+                    </div>
+                    <div class="col-2">
+                        Economy
+                        <h5>{{flight.Price_E}}</h5>
+                        
+                    </div>
+                    <div class="col-2">
+                        Business
+                        <h5>{{flight.Price_B}}</h5>
+                    </div>
+                    <div class="col-2">
+                        <h5>{{flight.RemainingSeats}}</h5>
+                        <span style="font-size: 12px;">Seats Available</span>
+                    </div>
+                    <div class="col">
+                        <button [ngStyle]="{'background-color': flight.selected? 'gray': 'rgb(103, 104, 177)'}"  [disabled]="flight.selected" class="bookbutton" (click)="selectflight(flight)">
+                        <span *ngIf="!flight.selected">Select</span>
+                        <span *ngIf="flight.selected">Selected</span>
+                    </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2" style="text-align: left;">
+                        <span class="card-link" (click)="showDetails()">Flight Details
+                            <i class="fa" [ngClass]="details? 'fa-angle-up' : 'fa-angle-down'" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="row justify-content-start" style="font-size: 12px;" *ngIf="details">
+                    <div class="col-2" style="text-align: left;">
+                        {{flight.Travel_Date|date}}
+                        <br>
+                        {{flight.Schedule_Id}},Terminal 3
+                    </div>
+                    <div class="col-1 getCenter">
+                        -
+                    </div>
+                    <div class="col-2" style="text-align: right;">
+                        {{flight.Day}}
+                        <br>
+                        {{flight.Schedule_Id}},Terminal 2
+                    </div>
+                    <div class="col-2 getCenter">
+                        {{flight.Plane_Name}}
+                    </div>
+                </div>
+            </div>
+            <!--ngFor End-->
+        </div>
+        <!--***************************************RETURN*************************************************************************-->
+        <div class="container" *ngIf="trip==false">
+            <!--ngFor-->
+            <div class="tab" *ngFor="let flight of returnflights;">
+                <div class="row">
+                <div class="col-2" style="text-align: left;">
+                    <h5 class="timeLoc">{{flight.Arrival_Time}}</h5>
+                    {{flight.Source}}
+                </div>
+                <div class="col-mb-auto duration">
+                    <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+                    <br>
+                    {{flight.Duration}} Hrs
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    <h5 class="timeLoc">{{flight.Departure_Time}}</h5>
+                    {{flight.Destination}}
+                </div>
+                <div class="col-2">
+                    Economy
+                    <h5>{{flight.Price_E}}</h5>
+                    
+                </div>
+                <div class="col-2">
+                    Business
+                    <h5>{{flight.Price_B}}</h5>
+                </div>
+                <div class="col-2">
+                    <h5>{{flight.RemainingSeats}}</h5>
+                    <span style="font-size: 12px;">Seats Available</span>
+                </div>
+                <div class="col">
+                    <button class="bookbutton" [ngStyle]="{'background-color': flight.selected? 'gray': 'rgb(103, 104, 177)'}"  [disabled]="flight.selected" (click)="Rselectflight(flight)">
+                        <span *ngIf="!flight.selected">Select</span>
+                        <span *ngIf="flight.selected">Selected</span>
+                </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2" style="text-align: left;">
+                    <span class="card-link" (click)="showDetails()">Flight Details
+                        <i class="fa" [ngClass]="details? 'fa-angle-up' : 'fa-angle-down'" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="row justify-content-start" style="font-size: 12px;" *ngIf="details">
+                <div class="col-2" style="text-align: left;">
+                    {{flight.Travel_Date|date}}
+                    <br>
+                    {{flight.Schedule_Id}}, Terminal 2
+                </div>
+                <div class="col-1 getCenter">
+                    -
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    {{flight.Day}}
+                    <br>
+                    {{flight.Schedule_Id}}, Terminal 1
+                </div>
+                <div class="col-2 getCenter">
+                    {{flight.Plane_Name}}
+                </div>
+            </div>
+        </div>
+        </div>
+    <br><br>
+    <br><br>
+    <!-- Select Tab -->
+    <div class="selectedTab">
+        <div class="row justify-content-start">
+            <div class="col-2 getCenter" style="padding-right: 1%; padding-left: 1%;">
+                <i class="fa fa-suitcase fa-3x" aria-hidden="true" style="color: rgb(68, 69, 124);"></i>
+            </div>
+            <div class="col-3" style="padding-right: 1%; padding-left: 1%;" *ngIf="selected===true">
+                <h5 style="margin-bottom: 0%;">
+                    {{selectedFlight.Price_E}} INR
+                </h5>
+                <span style="font-size: 13px;">
+                    {{selectedFlight.Arrival_Time}} ({{selectedFlight.Source}}) - {{selectedFlight.Departure_Time}} ({{selectedFlight.Destination}})
+                </span>
+            </div>
+            <div class="col-3" *ngIf="selected===false">
+
+            </div>
+            <div class="col-3" style="padding-right: 1%; padding-left: 1%;" *ngIf="tripType==1&&Rselected===true">
+                <h5 style="margin-bottom: 0%;">
+                    {{RselectedFlight.Price_E}} INR
+                </h5>
+                <span style="font-size: 13px;">
+                    {{RselectedFlight.Arrival_Time}} ({{RselectedFlight.Source}}) - {{RselectedFlight.Departure_Time}} ({{RselectedFlight.Destination}})
+                </span>
+            </div>
+            <div class="col-3" *ngIf="tripType==0||Rselected===false">
+                
+            </div>
+            <div class="col-2"  style="padding-right: 1%; padding-left: 1%;">
+                <span style="font-size: 13px;">
+                    Total minimum Amount
+                
+                <h5 style="margin-bottom: 0%;">
+                    {{totalAmount}} INR
+                </h5>
+                *Excludin Tax
+                </span>
+            </div>
+            <div class="col-2">
+                <button class="bookbutton" [routerLink]="['/SelectSeats']" (click)="book()">
+                    BOOK
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    </div>
+    
